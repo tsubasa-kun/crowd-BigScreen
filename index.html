@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CROWD</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/echarts.min.js"></script>
+    <script src="./js/china.js"></script>
+</head>
+<body>
+    <div class="content">
+        <!--头部-->
+        <div class="header-div">
+            <img class="logo-img" src="./images/logo.png">
+            <span class="title-text">CROWD数据总览</span>
+            <span class="time-area">
+                <span class="date-week-area">
+                    <span class="date-text">2017.10.10</span>
+                    <span class="week-text">星期二</span>
+                </span>
+                <span class="time-text">11:21</span>
+            </span>
+        </div>
+
+        <div style="float: left;">
+            <!--左边-->
+            <div class="in-line">
+                <!--左边第1块-->
+                <div class="left-area-1">
+                    <div class="area1">
+                        <div>
+                            <img class="icon-work" src="./images/icon-work.png">
+                            <div class="mt-29 text-center">
+                                <span class="number-text">509</span>
+                                <span class="label-text">发布任务数</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="icon-money" src="./images/icon-money.png">
+                            <div class="mt-29 text-center">
+                                <span class="number-text">82930.00</span>
+                                <span class="label-text">发布总金额（元）</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="area2">
+                        <div>
+                            <img class="icon-work-wc" src="./images/icon-work-wc.png">
+                            <div class="mt-29 text-center">
+                                <span class="number-text">465</span>
+                                <span class="label-text">完工任务数</span>
+                            </div>
+                        </div>
+                        <div>
+                            <img class="icon-money-wc" src="./images/icon-money-wc.png">
+                            <div class="mt-29 text-center">
+                                <span class="number-text">78565.00</span>
+                                <span class="label-text">完工总金额（元）</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="area3 text-center">
+                        <div>
+                            <img class="icon-l" src="./images/icon-yql.png">
+                            <div class="mt-29 text-center">
+                                <span class="number-text-2">12.2%</span>
+                                <span class="label-text-2">延期率</span>
+                            </div>
+                        </div>
+                        <div class="v-line"></div>
+                        <div>
+                            <img class="icon-l" src="./images/icon-bugl.png">
+                            <div class="mt-29 text-center">
+                                <span class="number-text-2">23.7%</span>
+                                <span class="label-text-2">BUG率</span>
+                            </div>
+                        </div>
+                        <div class="v-line"></div>
+                        <div>
+                            <img class="icon-l" src="./images/icon-shjsl.png">
+                            <div class="mt-29 text-center">
+                                <span class="number-text-2">87.1%</span>
+                                <span class="label-text-2">审核及时率</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--左边第2块-->
+                <div class="left-area-2">
+                    <div>
+                        <span class="chart-title-text">平均任务量/完工量</span>
+                        <span class="update-time-text">更新于 2017-10-10</span>
+                    </div>
+                    <div id="pjrwlwgl-chart" class="pjrwlwgl-chart"></div>
+                </div>
+
+                <!--左边第23块-->
+                <div class="left-area-3">
+                    <div>
+                        <span class="chart-title-text">各业务线任务金额</span>
+                        <span class="update-time-text">更新于 2017-10-10</span>
+                    </div>
+                    <div id="gywxrwje-chart" class="gywxrwje-chart"></div>
+                </div>
+            </div>
+
+            <!--中间-->
+            <div class="in-line">
+                <!--中间第1块-->
+                <div class="center-area-1">
+                    <div class="map-title">
+                        <div class="in-line text-center ml-88">
+                            <span class="number-text mt-6">117</span>
+                            <span class="label-text">开发者总数</span>
+                        </div>
+                        <div class="in-line text-right ml-59 mr-41">
+                            <div>
+                                <span class="label-text-3 in-line">内部：</span>
+                                <span class="number-text-3 in-line">67</span>
+                            </div>
+                            <div class="mt-6">
+                                <span class="label-text-3 in-line">外部：</span>
+                                <span class="number-text-3 in-line">31</span>
+                            </div>
+                            <div class="mt-6">
+                                <span class="label-text-3 in-line">老友记：</span>
+                                <span class="number-text-3 in-line">13</span>
+                            </div>
+                        </div>
+                        <div class="in-line v-line"></div>
+                        <div class="in-line text-center ml-41 mr-41">
+                            <span class="number-text mt-6">87.3%</span>
+                            <span class="label-text">人均效率</span>
+                        </div>
+                        <div class="in-line v-line"></div>
+                        <div class="in-line text-center ml-41">
+                            <span class="number-text mt-6">63</span>
+                            <span class="label-text">正在使用云桌面</span>
+                        </div>
+                    </div>
+                    <div id="map-chart" class="map-chart"></div>
+                </div>
+                <!--中间第2块-->
+                <div class="center-area-2">
+                    <div>
+                        <span class="chart-title-text">9月大区 TOP10</span>
+                        <span class="update-time-text">更新于 2017-10-10</span>
+                    </div>
+                    <div id="dqtop-chart" class="dqtop-chart"></div>
+                </div>
+            </div>
+
+            <!--右边-->
+            <div class="in-line">
+                <!--右边第1块-->
+                <div class="right-area-1 text-center">
+                    <div>
+                        <img class="icon-school" src="./images/icon-school.png">
+                        <span class="school-num-text">32</span>
+                    </div>
+                    <span class="label-text mt-5">正在服务学校</span>
+                </div>
+                <!--右边第2块-->
+                <div class="right-area-2">
+                    <div>
+                        <span class="chart-title-text">9月开发者 TOP3</span>
+                        <span class="update-time-text">更多</span>
+                    </div>
+                    <table class="table-area" border="0" cellpadding="0" cellspacing="0">
+                        <thead class="table-title">
+                            <td class="pl-24">姓名</td>
+                            <td class="text-center">积分</td>
+                            <td class="text-center">完工项目数</td>
+                            <td class="text-right pr-37">金额</td>
+                        </thead>
+                        <tbody id="top3-1">
+                            <!-- <tr>
+                                <td class="table-content-text pl-24">杨茂盛</td>
+                                <td class="table-content-num text-center">89</td>
+                                <td class="table-content-num text-center">13</td>
+                                <td class="table-content-num text-right pr-37">38200.00</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <!--右边第3块-->
+                <div class="right-area-3">
+                    <div>
+                        <span class="chart-title-text">9月需求方 TOP3</span>
+                        <span class="update-time-text">更多</span>
+                    </div>
+                    <table class="table-area" border="0" cellpadding="0" cellspacing="0">
+                        <thead class="table-title">
+                            <td class="pl-24">姓名</td>
+                            <td class="text-center">积分</td>
+                            <td class="text-center">发布任务数</td>
+                            <td class="text-right pr-37">金额</td>
+                        </thead>
+                        <tbody id="top3-2">
+                            <!-- <tr>
+                                <td class="table-content-text pl-24">杨茂盛</td>
+                                <td class="table-content-num text-center">89</td>
+                                <td class="table-content-num text-center">13</td>
+                                <td class="table-content-num text-right pr-37">38200.00</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <!--右边第4块-->
+                <div class="right-area-4">
+                    <div>
+                        <span class="chart-title-text">9月大区 TOP10</span>
+                        <span class="update-time-text">更多</span>
+                    </div>
+                    <table class="table-area" border="0" cellpadding="0" cellspacing="0">
+                        <thead class="table-title">
+                            <td class="pl-24">姓名</td>
+                            <td class="text-center">任务数</td>
+                            <td class="text-center">自动验收数</td>
+                            <td class="text-right pr-27">自动验收率</td>
+                        </thead>
+                        <tbody id="top10">
+                            <!-- <tr>
+                                <td class="table-content-text pl-24">华中</td>
+                                <td class="table-content-num text-center">89</td>
+                                <td class="table-content-num text-center">66</td>
+                                <td class="table-content-num text-right pr-27">99.8%</td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+    <script type="text/javascript">
+        var top3_1 = '';
+        for (var i = 0; i < 3; i++) {
+            top3_1 += '<tr>' +
+                '<td class="table-content-text pl-24">杨茂盛</td>' +
+                '<td class="table-content-num text-center">89</td>' +
+                '<td class="table-content-num text-center">13</td>' +
+                '<td class="table-content-num text-right pr-37">38200.00</td>' +
+                '</tr>';
+        }
+        $("#top3-1").empty();
+        $("#top3-1").append(top3_1);
+
+        var top3_2 = '';
+        for (var i = 0; i < 3; i++) {
+            top3_2 += '<tr>' +
+                '<td class="table-content-text pl-24">杨茂盛</td>' +
+                '<td class="table-content-num text-center">89</td>' +
+                '<td class="table-content-num text-center">13</td>' +
+                '<td class="table-content-num text-right pr-37">38200.00</td>' +
+                '</tr>';
+        }
+        $("#top3-2").empty();
+        $("#top3-2").append(top3_2);
+
+        var top10 = '';
+        for (var i = 0; i < 10; i++) {
+            top10 += '<tr>' +
+                '<td class="table-content-text pl-24">华中</td>' +
+                '<td class="table-content-num text-center">89</td>' +
+                '<td class="table-content-num text-center">66</td>' +
+                '<td class="table-content-num text-right pr-27">99.8%</td>' +
+                '</tr>';
+        }
+        $("#top10").empty();
+        $("#top10").append(top10);
+    </script>
+</body>
+</html>
