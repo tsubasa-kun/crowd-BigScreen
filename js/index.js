@@ -1,25 +1,84 @@
+initCurDate();
+
+//获取系统时间
+function initCurDate() {
+    let timetext = document.getElementById("time-text");
+    let weektext = document.getElementById("week-text");
+    let datetext = document.getElementById("date-text");
+    setInterval(function() {
+        let time = new Date();
+        let h = time.getHours();
+        let mi = time.getMinutes();
+        if (h < 10) {
+            h = '0' + h;
+        }
+        if (mi < 10) {
+            mi = '0' + mi;
+        }
+        let t = h + ":" + mi;
+        timetext.innerHTML = t;
+
+        let m = time.getMonth() + 1;
+        let da = time.getDate() + 0;
+        if (m < 10) {
+            m = '0' + m;
+        }
+        if (da < 10) {
+            da = '0' + da;
+        }
+        let d = time.getFullYear() + "." + m + "." + da;
+        datetext.innerHTML = d;
+
+        let w = time.getDay();
+        if (w == '0') {
+            w = '星期天';
+        } else if (w == '1') {
+            w = '星期一';
+        } else if (w == '2') {
+            w = '星期二';
+        } else if (w == '3') {
+            w = '星期三';
+        } else if (w == '4') {
+            w = '星期四';
+        } else if (w == '5') {
+            w = '星期五';
+        } else if (w == '6') {
+            w = '星期六';
+        }
+        weektext.innerHTML = w;
+    }, 1000);
+}
+
 var pjrwlwglChart = echarts.init(document.getElementById('pjrwlwgl-chart'));
 var pjrwlwglChartOption = {
     tooltip: {
         trigger: 'axis'
     },
     grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
+        left: '4.5%',
+        right: '4.5%',
+        bottom: '4%',
         containLabel: true
     },
     xAxis: {
         type: 'category',
         boundaryGap: false,
         axisLabel: {
-            show: false
+            show: true,
+            textStyle: {
+                color: '#fff'
+            }
         },
         data: ['周一','周二','周三','周四','周五','周六','周日']
     },
     yAxis: {
         axisLabel: {
             show: false
+        },
+        splitLine: {
+            lineStyle: {
+                color: 'rgba(234, 234, 234, 0.3)'
+            }
         }
     },
     series: [
@@ -43,6 +102,7 @@ var pjrwlwglChartOption = {
                 }])
             }
         },
+        symbol: 'none',
         data:[120, 132, 101, 134, 90, 230, 210]
     },
     {
@@ -65,6 +125,7 @@ var pjrwlwglChartOption = {
                 }])
             }
         },
+        symbol: 'none',
         data:[220, 182, 191, 234, 290, 330, 310]
     }
     ]
@@ -131,7 +192,7 @@ var dqtopChartOption = {
         textStyle: {
             color: "#fff"
         },
-        data: ['2011年', '2012年']
+        data: [{name:'2011年', icon:'circle'}, {name:'2012年', icon:'circle'}]
     },
     grid: {
         left: '3%',
@@ -144,6 +205,11 @@ var dqtopChartOption = {
         axisLabel: {
             textStyle: {
                 color: '#fff'
+            }
+        },
+        splitLine: {
+            lineStyle: {
+                color: 'rgba(234, 234, 234, 0.3)'
             }
         }
     },
